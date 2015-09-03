@@ -1,12 +1,14 @@
 /* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
+    Funnel = require('broccoli-funnel'),
+    mergeTrees = require('broccoli-merge-trees');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
     sassOptions: {
       includePaths: [
-        'bower_components/bootstrap-sass/assets/stylesheets'
+        'bower_components'
       ]
     }
   });
@@ -24,5 +26,15 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  var glyphFontTree = new Funnel('bower_components/bootstrap-sass/assets/fonts/bootstrap', {
+    srcDir: '/',
+    destDir: 'fonts/bootstrap'
+  });
+
+  var fontAwesomeTree = new Funnel('bower_components/font-awesome/fonts', {
+    srcDir: '/',
+    destDir: 'fonts'
+  });
+
+  return mergeTrees([app.toTree(), glyphFontTree, fontAwesomeTree]);
 };
