@@ -18,7 +18,7 @@ h6 {
   color: #778492;
 }
 a {
-  color: #3aaa64;
+  color: #2980b9;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -26,8 +26,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: #5f6b77;
-  color: #2d844e;
+  color: #3498db;
 }
 a:focus {
   text-decoration: none;
@@ -52,30 +51,30 @@ a.btn:focus {
 }
 a.btn-cta-primary,
 .btn-cta-primary {
-  background: #54ba4e;
-  border: 1px solid #54ba4e;
+  background: #e67e22;
+  border: 1px solid #e67e22;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
 }
 a.btn-cta-primary:hover,
 .btn-cta-primary:hover {
-  background: #49ac43;
-  border: 1px solid #49ac43;
+  background: #e67e22;
+  border: 1px solid #e67e22;
   color: #fff;
 }
 a.btn-cta-secondary,
 .btn-cta-secondary {
-  background: #479fc8;
-  border: 1px solid #479fc8;
+  background: #bdc3c7;
+  border: 1px solid #bdc3c7;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
 }
 a.btn-cta-secondary:hover,
 .btn-cta-secondary:hover {
-  background: #3893bd;
-  border: 1px solid #3893bd;
+  background: #bdc3c7;
+  border: 1px solid #bdc3c7;
   color: #fff;
 }
 .text-highlight {
@@ -107,6 +106,16 @@ iframe {
 }
 */
 
+/* ======= Utilities ======= */
+.featured-company {
+  font-size: 80px;
+  color: #CCC;
+  padding: 10px 0;
+}
+.company-content {
+  width: 45%;
+  display: inline-block;
+}
 
 /* ======= Navbar ======= */
 .navbar-brand {
@@ -116,9 +125,21 @@ iframe {
   padding: 15px 20px;
 }
 .navbar-nav > li > a {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
+.navbar-form {
+ margin-top: 18px;
+}
+.search-btn {
+  padding: 7px 5px 6px 10px;
+}
+.btn-search {
+  color: #fff;
+  background-color: #e67e22;
+  font-weight: 100;
+}
+
 /* ======= Header ======= */
 .header {
   background: #f5f5f5;
@@ -167,9 +188,19 @@ iframe {
   font-size: 20px;
   padding-top: 8px;
 }
+
+/* ======= Search Bar // Jobs Page ======= */
+
+.job-search-bar {
+  margin-bottom: 30px;
+}
+.search-input {
+  border: 1px solid #e67e22;
+}
+
 /* ======= Sections======= */
 .sections-wrapper {
-  padding-top: 60px;
+  padding-top: 30px;
   padding-bottom: 60px;
 }
 .section {
@@ -182,17 +213,24 @@ iframe {
 .section .heading {
   margin-top: 0;
   margin-bottom: 30px;
-  color: #545e69;
+  color: #778492;
   font-size: 24px;
 }
 .section .content .more-link .fa {
   margin-right: 5px;
   font-size: 14px;
 }
-/* About Section */
+/* Job Board Section */
 /* Latest Section */
 .latest .item {
-  margin-bottom: 30px;
+  margin: 15px 0;
+  .job-spec-icons {
+    color: #d35400;
+    font-size: 13px;
+    .job-spec-icon {
+      padding-right: 30px;
+    }
+  }
 }
 .latest .item .title {
   font-size: 18px;
@@ -203,7 +241,7 @@ iframe {
   font-size: 12px;
 }
 .latest .item .title a {
-  color: #778492;
+  color: #545e69;
 }
 .latest .item .title a:hover {
   color: #5f6b77;
@@ -380,34 +418,39 @@ iframe {
   height: 15px;
   background: #66cb8c;
 }
-/* Testimonials section */
-.testimonials .item {
+/* post-job section */
+.post-job .item {
   margin-bottom: 30px;
 }
-.testimonials .item:last-child {
+.post-job .item:last-child {
   margin-bottom: 0;
 }
-.testimonials .item .quote {
+.post-job .item .quote {
   color: #666666;
   font-size: 16px;
   border-left-color: #9fdeb7;
   margin-bottom: 15px;
 }
-.testimonials .item .quote .fa {
+.post-job .item .quote .fa {
   color: #79d19a;
   margin-right: 15px;
 }
-.testimonials .item .source {
+.post-job .item .source {
   font-size: 14px;
   padding-left: 30px;
   font-weight: 500;
 }
-.testimonials .item .source .name {
+.post-job .item .source .name {
   color: #939ea9;
   font-weight: 600;
 }
-.testimonials .item .source .title {
+.post-job .item .source .title {
   color: #999999;
+}
+.post-job {
+  button {
+    margin: 10px 0;
+  }
 }
 /* Education section */
 .education .item {
@@ -495,9 +538,8 @@ iframe {
 }
 /* ======= Footer ======= */
 .footer {
-  background: #32383e;
-  color: #fff;
-  padding: 10px 0;
+  background: #f5f5f5;
+  padding: 40px 0;
 }
 .footer .copyright {
   line-height: 1.6;
