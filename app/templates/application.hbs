@@ -22,7 +22,13 @@
               <li><a href="#">Edit Profile</a></li>
             </ul>
           </li>
-          <li>{{#link-to 'jobs'}}Jobs{{/link-to}}</li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>{{#link-to 'jobs'}} Job Board{{/link-to}}</li>
+              <li>{{#link-to 'post-content'}}Post A job{{/link-to}}</li>
+            </ul>
+          </li>
           <li><a href="#">Members</a></li>
         </ul>
         <form class="navbar-form navbar-right" role="search">

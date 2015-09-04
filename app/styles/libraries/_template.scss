@@ -116,6 +116,16 @@ iframe {
   width: 45%;
   display: inline-block;
 }
+.orange-icon {
+  color: #e67e22 !important;
+}
+
+/* ======= Job Post ======= */
+
+#job-post-input {
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
 
 /* ======= Navbar ======= */
 .navbar-brand {
@@ -234,7 +244,7 @@ iframe {
     }
   }
 }
-.latest .item .title {
+.title {
   font-size: 18px;
   margin-top: 0;
 }
@@ -242,10 +252,10 @@ iframe {
   margin-left: 5px;
   font-size: 12px;
 }
-.latest .item .title a {
+.title a {
   color: #545e69;
 }
-.latest .item .title a:hover {
+.title a:hover {
   color: #5f6b77;
 }
 .latest .item .project-image:hover {
