@@ -12,16 +12,26 @@
         <a class="navbar-brand" href="#"><h1><i class="fa fa-suitcase"></i> Jobzilla</h1></a>
       </div>
 
+
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li>{{#link-to 'user'}}View Profile{{/link-to}}</li>
-              <li><a href="#">Edit Profile</a></li>
-            </ul>
-          </li>
+           {{#if session.isAuthenticated}}
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li>{{#link-to 'user'}}View Profile{{/link-to}}</li>
+                 <li><a href="#">Edit Profile</a></li>
+               </ul>
+             </li>
+             <li>
+               <a href="#" {{ action 'invalidateSession' }}>Logout</a>
+             </li>
+            {{else}}
+            <li>
+              <a href="#" {{ action 'sessionRequiresAuthentication' }}>Login</a>
+            </li>
+           {{/if}}
           <li>{{#link-to 'jobs'}}Jobs{{/link-to}}</li>
           <li><a href="#">Members</a></li>
         </ul>
