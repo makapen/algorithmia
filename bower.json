@@ -12,7 +12,10 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
-    "firebase": "^2.1.0"
+    "firebase": "^2.1.0",
+    "ember-simple-auth": "0.8.0",
+    "auth0-lock": "~7.7.1",
+    "jsrsasign": "~4.8.3"
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",
