@@ -148,8 +148,9 @@ iframe {
 .header .btn {
   font-weight: bold;
 }
-.header .profile-image {
+.profile-image {
   margin-right: 30px;
+  margin-bottom: 10px;
 }
 .header .profile-content .name {
   color: #49515a;
@@ -157,7 +158,7 @@ iframe {
   margin-bottom: 5px;
   margin-top: 30px;
 }
-.header .profile-content .desc {
+.profile-content .desc {
   color: #778492;
   font-family: "Lato", arial, sans-serif;
   font-weight: 400;
@@ -165,7 +166,7 @@ iframe {
   margin-top: 0;
   margin-bottom: 15px;
 }
-.header .profile-content .social a {
+.profile-content .social a {
   background: #b0b7bf;
   width: 36px;
   height: 36px;
@@ -181,10 +182,11 @@ iframe {
   color: #fff;
   text-align: center;
 }
-.header .profile-content .social a:hover {
-  background: #778492;
+.profile-content .social a:hover {
+  color: #e67e22;
 }
-.header .profile-content .social a .fa {
+.profile-content .social a .fa {
+  color: #fff;
   font-size: 20px;
   padding-top: 8px;
 }
@@ -359,6 +361,15 @@ iframe {
   color: #999999;
   font-weight: normal;
 }
+.experience-dates {
+  color: #d35400;
+  font-size: 13px;
+}
+.experience-item {
+  .title a {
+    color: #545e69;
+  }
+}
 /* Git section */
 .ghfeed {
   height: 600px;
@@ -374,7 +385,7 @@ iframe {
 /* Info Section */
 .info .fa {
   margin-right: 15px;
-  color: #ccd1d6;
+  color: #d35400;
 }
 .info .fa.fa-envelope-o {
   font-size: 14px;
@@ -416,7 +427,7 @@ iframe {
 }
 .skills .skillset .level-bar-inner {
   height: 15px;
-  background: #66cb8c;
+  background: #bdc3c7;
 }
 /* post-job section */
 .post-job .item {
