@@ -21,6 +21,18 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:jwt',
+    authenticationRoute: 'index',
+    routeAfterAuthentication: 'jobs',
+    routeIfAlreadyAuthenticated: 'jobs'
+  }
+
+  ENV['auth0-ember-simple-auth'] = {
+    clientID: "hkGW1zDmCpPCOthLmsbopZtLMeZHhJhN",
+    domain: "linkedindemo.auth0.com"
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
