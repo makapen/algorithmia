@@ -122,9 +122,8 @@ iframe {
 
 /* ======= Job Post ======= */
 
-#job-post-input {
-  margin-bottom: 20px;
-  border-radius: 4px;
+.job-post-input {
+  margin-bottom: 20px !important;
 }
 
 /* ======= Navbar ======= */
@@ -206,8 +205,9 @@ iframe {
 .job-search-bar {
   margin-bottom: 30px;
 }
-.search-input {
-  border: 1px solid #e67e22;
+input {
+  border: 1px solid #e67e22 !important;
+  border-radius: 4px !important;
 }
 
 /* ======= Sections======= */
