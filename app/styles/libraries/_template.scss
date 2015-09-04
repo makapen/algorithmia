@@ -119,11 +119,16 @@ iframe {
 .orange-icon {
   color: #e67e22 !important;
 }
+.orange-input {
+  border: 1px solid #e67e22 !important;
+  border-radius: 6px !important;
+}
 
 /* ======= Job Post ======= */
 
 .job-post-input {
   margin-bottom: 20px !important;
+  border-radius: 4px;
 }
 
 /* ======= Navbar ======= */
@@ -204,10 +209,6 @@ iframe {
 
 .job-search-bar {
   margin-bottom: 30px;
-}
-input {
-  border: 1px solid #e67e22 !important;
-  border-radius: 4px !important;
 }
 
 /* ======= Sections======= */
