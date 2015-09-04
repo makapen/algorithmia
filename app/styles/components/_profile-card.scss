@@ -1,0 +1,26 @@
+.profile-card {
+  @include display-flex();
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .follow {
+    margin-top: 5px;
+    color: #545e69;
+    font-size: 14px;
+  }
+
+  .heading {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #545e69;
+  }
+}
+
+.profile-card-left {
+  width: 70px;
+}
+
+.profile-card-right {
+  min-width: 300px;
+  width: calc(100% - 70px);
+}

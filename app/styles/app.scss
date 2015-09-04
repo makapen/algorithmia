@@ -1,3 +1,6 @@
 @import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 @import 'bower_components/font-awesome/scss/font-awesome.scss';
 @import 'libraries/_template.scss';
+
+@import 'mixins/_flex';
+@import 'components/_profile-card';
