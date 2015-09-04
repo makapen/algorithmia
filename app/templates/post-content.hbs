@@ -15,7 +15,15 @@
                         <form {{action 'submitJobPost' on='submit'}}>
                           {{input value=title type="text" name="job-title" class="form-control job-post-input orange-input" placeholder="Job Title"}}
                           {{input value=company type="text" name="job-company" class="form-control job-post-input orange-input" placeholder="Company"}}
-                          {{input value=companySize type="text" name="job-loc" class="form-control job-post-input orange-input" placeholder="Company Size"}}
+                          <div>
+                            <span>Company Size</span>
+                            {{#x-select value=model.companySize}}
+                              {{#x-option value='1-10'}}1 - 10{{/x-option}}
+                              {{#x-option value='11-50'}}11 - 50{{/x-option}}
+                              {{#x-option value='51-200'}}51 - 200{{/x-option}}
+                              {{#x-option value='201+'}}201+{{/x-option}}
+                            {{/x-select}}
+                          </div>
                           {{input value=city type="text" name="job-city" class="form-control job-post-input orange-input" placeholder="City"}}
                           {{input value=state type="text" name="job-state" class="form-control job-post-input orange-input" placeholder="State"}}
                           {{textarea value=description type="text" name="job-loc" class="form-control job-post-input orange-input" placeholder="Description"}}
