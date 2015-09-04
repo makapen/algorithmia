@@ -123,6 +123,9 @@ iframe {
   border: 1px solid #e67e22 !important;
   border-radius: 6px !important;
 }
+.orange-color {
+  color: #e67e22 !important;
+}
 
 /* ======= Job Post ======= */
 
@@ -153,6 +156,25 @@ iframe {
   background-color: #e67e22;
   font-weight: 100;
 }
+
+/* ======= Landing Page // Login ======= */
+.landing {
+  .title {
+    font-size: 60px;
+  }
+  img {
+    padding-bottom: 20px;
+    width: 35%;
+  }
+  button {
+    color: #fff;
+    background-color: #e67e22;
+    font-weight: 100;
+    margin-top: 20px;
+  }
+}
+
+
 
 /* ======= Header ======= */
 .header {
@@ -214,7 +236,7 @@ iframe {
 /* ======= Sections======= */
 .sections-wrapper {
   padding-top: 30px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 .section {
   margin-bottom: 30px;
