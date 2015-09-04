@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('jobs');
   this.route('user');
+  this.route('post-content');
 });
 
 export default Router;
