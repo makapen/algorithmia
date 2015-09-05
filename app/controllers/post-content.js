@@ -3,6 +3,9 @@ import ajax from 'ic-ajax';
 
 export default Ember.Controller.extend({
   actions: {
+    selectCompanySize: function(size) {
+      this.set(companySize, 'size');
+    },
     submitJobPost() {
       this.store.createRecord('job', {
         title: this.get('title'),
