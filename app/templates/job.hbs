@@ -23,8 +23,9 @@
               </div>
               <!--//desc-->
               <div class="desc col-md-12 col-sm-12 col-xs-12">
-                <a href="jobs#{{model.id}}">BACKKKKK</a>
-                <button class="btn btn-lg btn-cta-primary btn-post-job pull-right">Back</button>
+                {{#link-to 'jobs'}}
+                  <button class="btn btn-lg btn-cta-primary btn-post-job pull-right">Back</button>
+                {{/link-to}}
               </div>
             </div>
             <!--//item-->

@@ -18,7 +18,6 @@
             <hr>
 
             {{#each model as |job|}}
-            <a name="{{job.id}}">you landed</a>
               <div class="item row">
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">
@@ -32,7 +31,7 @@
                   <p class="job-list-cutoff">{{job.description}}</p>
                   <div class="job-spec-icons">
                     <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date job.createdDate}}</span>
-                    
+
                     {{#if job.hasLocation}}
                       <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
                     {{/if}}
