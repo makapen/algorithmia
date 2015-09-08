@@ -1,0 +1,9 @@
+{
+  "firebase": "makapen-social-network",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

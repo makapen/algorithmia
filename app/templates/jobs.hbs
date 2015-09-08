@@ -2,8 +2,8 @@
 
   <div class="row">
     <div class="primary col-md-8 col-sm-12 col-xs-12">
-      <div class="input-group input-group-lg job-search-bar orange-input">
-        <input type="text" name="q" id="q" class="form-control search-input" placeholder="Search company, job title or location">
+      <div class="input-group input-group-lg job-search-bar  ">
+        <input type="text" name="q" id="q" class="form-control search-input orange-border" placeholder="Search company, job title or location">
         <span class="input-group-btn">
           <button class="btn btn-md btn-search" type="submit">
             <span class="glyphicon glyphicon-search"></span> Search
@@ -18,15 +18,18 @@
             <hr>
 
             {{#each model as |job|}}
+            <a name="{{job.id}}">you landed</a>
               <div class="item row">
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">
-                    <a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">{{job.title}}</a>
+                    {{#link-to 'job' job.id}}
+                      {{job.title}}
+                    {{/link-to}}
                   </h3>
                   <p>
                     <em>{{job.company}}</em>
                   </p>
-                  <p>{{job.description}}</p>
+                  <p class="job-list-cutoff">{{job.description}}</p>
                   <div class="job-spec-icons">
                     <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date job.createdDate}}</span>
                     <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
@@ -35,7 +38,7 @@
                 </div>
                 <!--//desc-->
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                  <a class="btn btn-cta-secondary pull-right" href="#">Apply Now <i class="fa fa-pencil-square-o"></i></a>
+                  <a class="btn btn-cta-secondary pull-right" href="">Apply Now <i class="fa fa-pencil-square-o"></i></a>
                 </div>
               </div>
               <!--//item-->

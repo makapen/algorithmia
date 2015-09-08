@@ -1,0 +1,77 @@
+<div class="container sections-wrapper">
+
+  <div class="row">
+    <div class="primary col-md-8 col-sm-12 col-xs-12">
+
+      <section class="latest section">
+        <div class="section-inner">
+          <div class="content">
+            <div class="item row">
+              <div class="desc col-md-12 col-sm-12 col-xs-12">
+                <h2 class="heading-sm">{{model.title}}</h2>
+                <a class="btn btn-cta-secondary job-option-button" href="">Apply Now <i class="fa fa-pencil-square-o"></i></a>
+                <a class="btn btn-cta-secondary job-option-button" href="">Favorite <i class="fa fa-heart"></i></a>
+                <p>
+                  <em>{{model.company}}</em>
+                </p>
+                <div class="job-spec-icons">
+                  <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date model.createdDate}}</span>
+                  <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{model.city}}, {{model.state}}</span>
+                  <span class="job-spec-icon"><i class="fa fa-users"></i> 1 - 50 employees</span>
+                </div>
+                <p>{{model.description}}</p>
+              </div>
+              <!--//desc-->
+              <div class="desc col-md-12 col-sm-12 col-xs-12">
+                <a href="jobs#{{model.id}}">BACKKKKK</a>
+                <button class="btn btn-lg btn-cta-primary btn-post-job pull-right">Back</button>
+              </div>
+            </div>
+            <!--//item-->
+          </div>
+          <!--//content-->
+        </div>
+        <!--//section-inner-->
+      </section>
+      <!--//section-->
+
+    </div>
+    <!--//primary-->
+    <div class="secondary col-md-4 col-sm-12 col-xs-12">
+
+      <aside class="blog aside section">
+        <div class="section-inner">
+          <h2 class="heading">Favorites <i class="fa orange-icon fa-heart"></i></h2>
+          <div class="content">
+            <h3 class="title">
+              <a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">Technical Project Manager</a>
+            </h3>
+            <p><em>Wallero Technologies</em></p>
+          </div><!--//content-->
+        </div><!--//section-inner-->
+      </aside><!--//section-->
+
+      <aside class="post-job aside section">
+        <div class="section-inner">
+          <h2 class="heading">Post A Job</h2>
+          <div class="content">
+            <div class="text-center">
+              {{#link-to 'post-content'}}
+                <button class="btn btn-lg btn-cta-primary btn-post-job">Post Job <i class="fa fa-pencil-square-o"></i></button>
+              {{/link-to}}
+            </div>
+            <br>
+            <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More About Jobzilla</a></p>
+          </div>
+          <!--//content-->
+        </div>
+        <!--//section-inner-->
+      </aside>
+      <!--//section-->
+
+    </div>
+    <!--//secondary-->
+  </div>
+  <!--//row-->
+</div>
+<!--//masonry-->
