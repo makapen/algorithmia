@@ -30,5 +30,40 @@ export default DS.RESTAdapter.extend({
     }).catch( (err) => {
       return err;
     })
+  },
+
+  query(store, type, query) {
+    var queryString = query.title;
+
+    return ajax({
+      type: 'POST',
+      url: this.get('host') + '/_search',
+      dataType: 'json',
+      data: JSON.stringify({
+        "query": {
+          "filtered": {
+            "filter": {
+              "term": {
+                "title": queryString
+              }
+            }
+          }
+        }
+      })
+    }).then(function(res) {
+      var results = res.hits.hits;
+      var resultObjects = results.map( (item) => {
+        let obj = item._source.job;
+        obj.id = item._id;
+        // store.push('post-query', obj);
+        return obj;
+      })
+      return {
+        job: resultObjects
+      }
+
+    }).catch(function(err) {
+       return err;
+    })
   }
 });
