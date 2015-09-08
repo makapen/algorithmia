@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
         state: this.get('state'),
         description: this.get('description')
       }).save();
+      this.transitionTo('jobs');
     }
   }
 });
