@@ -13,7 +13,6 @@
 
       <section class="latest section">
         <div class="section-inner">
-          <h3>Your job: {{currentJob.title}} at {{currentJob.company.name}}</h3>
           <h2 class="heading">Recent Jobs</h2>
           <div class="content">
             <hr>
@@ -29,7 +28,7 @@
                   </p>
                   <p>{{job.description}}</p>
                   <div class="job-spec-icons">
-                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date job.createdDate}}</span>
+                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date job.createdDate}}</span>
                     <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
                     <span class="job-spec-icon"><i class="fa fa-users"></i> 1 - 50 employees</span>
                   </div>
