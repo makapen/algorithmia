@@ -31,9 +31,15 @@
                   </p>
                   <p class="job-list-cutoff">{{job.description}}</p>
                   <div class="job-spec-icons">
-                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date job.createdDate}}</span>
-                    <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
-                    <span class="job-spec-icon"><i class="fa fa-users"></i> 1 - 50 employees</span>
+                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date job.createdDate}}</span>
+                    
+                    {{#if job.hasLocation}}
+                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
+                    {{/if}}
+
+                    {{#if job.companySize}}
+                      <span class="job-spec-icon"><i class="fa fa-users"></i>{{job.companySize}} employees</span>
+                    {{/if}}
                   </div>
                 </div>
                 <!--//desc-->

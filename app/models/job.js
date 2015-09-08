@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
@@ -11,5 +12,9 @@ export default DS.Model.extend({
     defaultValue: function() {
       return moment().format("YYYY-MM-DD") + 'T' + moment().format('HH:mm:ss.SSSZZ');
     }
+  }),
+  
+  hasLocation: Ember.computed('city', 'state', function() {
+    return this.get('city') && this.get('state');
   })
 });
