@@ -53,5 +53,50 @@ export default DS.RESTAdapter.extend({
     }).catch( (err) => {
       return err;
     })
+  },
+
+  query(store, type, query) {
+    var queryString = query.title;
+
+    // if there isn't a query, return all the postings
+    if (Ember.isEmpty(queryString)) {
+      return this.findAll(store, type);
+    }
+
+    // split the string into individual words, return both fields and reflatten the array
+    queryString = queryString.split(' ').map( function(item) {
+      return [{ "term": { "title": item }}, { "term": { "description": item }}];
+    });
+
+    queryString = _.flatten(queryString);
+
+    return ajax({
+      type: 'POST',
+      url: this.get('host') + '/_search',
+      dataType: 'json',
+      data: JSON.stringify({
+        "query": {
+          "bool": {
+            "should": [
+              queryString
+            ]
+          }
+        }
+
+      })
+    }).then(function(res) {
+      var results = res.hits.hits;
+      var resultObjects = results.map( (item) => {
+        let obj = item._source.post;
+        obj.id = item._id;
+        return obj;
+      })
+      return {
+        post: resultObjects
+      }
+
+    }).catch(function(err) {
+       return err;
+    })
   }
 });

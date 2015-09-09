@@ -11,8 +11,9 @@ export default Ember.Controller.extend({
         city: this.get('city'),
         state: this.get('state'),
         description: this.get('description')
-      }).save();
-      this.transitionTo('posts');
+      }).save().then( () => {
+        this.transitionTo('posts');
+      });
     }
   }
 });
