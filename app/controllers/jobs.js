@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
   actions: {
     submitSearch: function() {
       this.store.query('job', {
-        "title": "test"
+        "title": this.get('query')
       }).then( (res) => {
         this.set('jobs', res);
       }).catch( (err) => {

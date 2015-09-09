@@ -33,20 +33,31 @@ export default DS.RESTAdapter.extend({
   query(store, type, query) {
     var queryString = query.title;
 
+    // if there isn't a query, return all the postings
+    if (Ember.isEmpty(queryString)) {
+      return this.findAll(store, type);
+    }
+
+    // split the string into individual words, return both fields and reflatten the array
+    queryString = queryString.split(' ').map( function(item) {
+      return [{ "term": { "title": item }}, { "term": { "description": item }}];
+    });
+
+    queryString = _.flatten(queryString);
+
     return ajax({
       type: 'POST',
       url: this.get('host') + '/_search',
       dataType: 'json',
       data: JSON.stringify({
         "query": {
-          "filtered": {
-            "filter": {
-              "term": {
-                "title": queryString
-              }
-            }
+          "bool": {
+            "should": [
+              queryString
+            ]
           }
         }
+
       })
     }).then(function(res) {
       var results = res.hits.hits;
