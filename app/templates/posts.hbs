@@ -17,27 +17,27 @@
           <div class="content">
             <hr>
 
-            {{#each model as |job|}}
+            {{#each model as |post|}}
               <div class="item row">
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">
-                    {{#link-to 'job' job.id}}
-                      {{job.title}}
+                    {{#link-to 'post' post.id}}
+                      {{post.title}}
                     {{/link-to}}
                   </h3>
                   <p>
-                    <em>{{job.company}}</em>
+                    <em>{{post.company}}</em>
                   </p>
-                  <p class="job-list-cutoff">{{job.description}}</p>
+                  <p class="job-list-cutoff">{{post.description}}</p>
                   <div class="job-spec-icons">
-                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date job.createdDate}}</span>
+                    <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date post.createdDate}}</span>
 
-                    {{#if job.hasLocation}}
-                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
+                    {{#if post.hasLocation}}
+                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{post.city}}, {{post.state}}</span>
                     {{/if}}
 
-                    {{#if job.companySize}}
-                      <span class="job-spec-icon"><i class="fa fa-users"></i> {{job.companySize}} employees</span>
+                    {{#if post.companySize}}
+                      <span class="job-spec-icon"><i class="fa fa-users"></i> {{post.companySize}} employees</span>
                     {{/if}}
                   </div>
                 </div>

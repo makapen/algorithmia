@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
     returnToJobs: function() {
       var id = this.get('model.id');
       console.log('the id is: ', id);
-      this.transitionTo('jobs'+ "#" + id);
+      this.transitionTo('posts'+ "#" + id);
     }
   }
 });

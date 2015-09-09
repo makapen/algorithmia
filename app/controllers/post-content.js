@@ -4,7 +4,7 @@ import ajax from 'ic-ajax';
 export default Ember.Controller.extend({
   actions: {
     submitJobPost() {
-      this.store.createRecord('job', {
+      this.store.createRecord('post', {
         title: this.get('title'),
         company: this.get('company'),
         companySize: this.get('companySize'),
@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
         state: this.get('state'),
         description: this.get('description')
       }).save();
-      this.transitionTo('jobs');
+      this.transitionTo('posts');
     }
   }
 });
