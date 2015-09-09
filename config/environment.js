@@ -24,8 +24,8 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:jwt',
     authenticationRoute: 'index',
-    routeAfterAuthentication: 'jobs',
-    routeIfAlreadyAuthenticated: 'jobs'
+    routeAfterAuthentication: 'posts',
+    routeIfAlreadyAuthenticated: 'posts'
   }
 
   ENV['auth0-ember-simple-auth'] = {
