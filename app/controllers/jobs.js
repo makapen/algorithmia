@@ -14,8 +14,7 @@ export default Ember.Controller.extend({
       this.store.query('job', {
         "title": "test"
       }).then( (res) => {
-        Ember.Logger.log('res', res.get('content'))
-        this.set('jobs', res.get('content'));
+        this.set('jobs', res);
       }).catch( (err) => {
         Ember.Logger.log('err', err)
       })

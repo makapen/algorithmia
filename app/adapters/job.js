@@ -23,13 +23,11 @@ export default DS.RESTAdapter.extend({
         let obj = item._source.job;
         obj.id = item._id;
         return obj;
-      })
+      });
       return {
         jobs: resultObjects
       }
-    }).catch( (err) => {
-      return err;
-    })
+    });
   },
 
   query(store, type, query) {
