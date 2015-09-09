@@ -16,8 +16,13 @@
                 </p>
                 <div class="job-spec-icons">
                   <span class="job-spec-icon"><i class="fa fa-clock-o"></i> {{time-from-date model.createdDate}}</span>
-                  <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{model.city}}, {{model.state}}</span>
-                  <span class="job-spec-icon"><i class="fa fa-users"></i> 1 - 50 employees</span>
+                  {{#if model.hasLocation}}
+                    <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{model.city}}, {{model.state}}</span>
+                  {{/if}}
+
+                  {{#if model.companySize}}
+                    <span class="job-spec-icon"><i class="fa fa-users"></i> 1 - 50 employees</span>
+                  {{/if}}
                 </div>
                 <p>{{model.description}}</p>
               </div>

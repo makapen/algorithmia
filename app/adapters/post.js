@@ -6,6 +6,24 @@ export default DS.RESTAdapter.extend({
   pathForType() {
     return 'post';
   },
+
+  createRecord(store, type, snapshot) {
+    var data = this.serialize(snapshot);
+
+    return ajax({
+      url: this.get('host') + '/post/',
+      method: 'POST',
+      dataType: 'json',
+      data: JSON.stringify({ post: data})
+    }).then(function(res) {
+      data.id = res._id;
+
+      return {post: data};
+    }).catch(function(err) {
+      throw new Error(err);
+    })
+  },
+
   findAll: function(store, type) {
     return ajax({
       url: this.get('host') + '/post/_search',
