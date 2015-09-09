@@ -5,18 +5,18 @@ export default Ember.Controller.extend({
     return this.get('session.secure.profile.positions.values.firstObject');
   }.property('session.secure.profile.positions.values.[]'),
 
-  displayJobs: Ember.computed('jobs', function() {
-    return this.get('jobs');
+  displayPosts: Ember.computed('posts.[]', function() {
+    return this.get('posts');
   }),
 
   actions: {
     submitSearch: function() {
-      this.store.query('job', {
+      this.store.query('post', {
         "title": this.get('query')
-      }).then( (res) => {
-        this.set('jobs', res);
+      }).then( (posts) => {
+        this.set('posts', posts);
       }).catch( (err) => {
-        Ember.Logger.log('err', err)
+        throw new Error(err);
       })
     }
   }

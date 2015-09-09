@@ -13,10 +13,10 @@
                     <div class="desc col-md-8 col-sm-8 col-xs-12">
                       <div class="input-group input-group-lg job-search-bar">
                         <form {{action 'submitJobPost' on='submit'}}>
-                          {{input value=title type="text" name="job-title" class="form-control job-post-input orange-input" placeholder="Job Title"}}
-                          {{input value=company type="text" name="job-company" class="form-control job-post-input orange-input" placeholder="Company"}}
+                          {{input value=title type="text" name="job-title" class="form-control job-post-input  " placeholder="Job Title"}}
+                          {{input value=company type="text" name="job-company" class="form-control job-post-input  " placeholder="Company"}}
                           <div>
-                            {{#x-select value=companySize class='form-control orange-input job-post-input'}}
+                            {{#x-select value=companySize class='form-control   job-post-input'}}
                               {{#x-option value=''}}Company Size{{/x-option}}
                               {{#x-option value='1-10'}}1 - 10{{/x-option}}
                               {{#x-option value='11-50'}}11 - 50{{/x-option}}
@@ -24,9 +24,9 @@
                               {{#x-option value='201+'}}201+{{/x-option}}
                             {{/x-select}}
                           </div>
-                          {{input value=city type="text" name="job-city" class="form-control job-post-input orange-input" placeholder="City"}}
-                          {{input value=state type="text" name="job-state" class="form-control job-post-input orange-input" placeholder="State"}}
-                          {{textarea value=description type="text" name="job-loc" class="form-control job-post-input orange-input" placeholder="Description"}}
+                          {{input value=city type="text" name="job-city" class="form-control job-post-input  " placeholder="City"}}
+                          {{input value=state type="text" name="job-state" class="form-control job-post-input  " placeholder="State"}}
+                          {{textarea value=description type="text" name="job-loc" class="form-control job-post-input  " placeholder="Description"}}
                           <button class="btn btn-md btn-search" type="submit">Submit</button>
                         </form>
                       </div>

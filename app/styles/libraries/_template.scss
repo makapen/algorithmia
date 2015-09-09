@@ -119,9 +119,8 @@ iframe {
 .orange-icon {
   color: #e67e22 !important;
 }
-.orange-input {
+.orange-border {
   border: 1px solid #e67e22 !important;
-  border-radius: 6px !important;
 }
 .orange-color {
   color: #e67e22 !important;
@@ -135,6 +134,10 @@ iframe {
 .job-post-input {
   margin-bottom: 20px !important;
   border-radius: 4px;
+}
+.job-option-button {
+  margin-bottom: 20px;
+  margin-right: 5px;
 }
 
 /* ======= Navbar ======= */
@@ -255,6 +258,12 @@ iframe {
   color: #778492;
   font-size: 24px;
 }
+.section .heading-sm {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #778492;
+  font-size: 24px;
+}
 .section .content .more-link .fa {
   margin-right: 5px;
   font-size: 14px;
@@ -266,10 +275,16 @@ iframe {
   .job-spec-icons {
     color: #d35400;
     font-size: 13px;
+    margin-bottom: 30px;
     .job-spec-icon {
       padding-right: 30px;
+      margin-right: 5px;
     }
   }
+}
+.job-list-cutoff {
+  max-height: 65px;
+  overflow: hidden;
 }
 .title {
   font-size: 18px;

@@ -2,16 +2,14 @@
 
   <div class="row">
     <div class="primary col-md-8 col-sm-12 col-xs-12">
-      <div class="input-group input-group-lg job-search-bar orange-input">
-        <form class='input-group input-group-lg job-search-bar orange-input' {{action 'submitSearch' on='submit'}}>
-          {{input value=query type="text" name="q" class="form-control search-input" placeholder="Search company, job title or location"}}
-          <span class="input-group-btn">
-            <button class="btn btn-md btn-search" type="submit">
-              <span class="glyphicon glyphicon-search"></span> Search
-            </button>
-          </span>
-        </form>
-      </div>
+      <form class='input-group input-group-lg job-search-bar orange-input' {{action 'submitSearch' on='submit'}}>
+        {{input value=query type="text" name="q" class="form-control search-input" placeholder="Search company, job title or location"}}
+        <span class="input-group-btn">
+        <button class="btn btn-md btn-search" type="submit">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+        </span>
+      </form>
 
       <section class="latest section">
         <div class="section-inner">
@@ -19,33 +17,35 @@
           <div class="content">
             <hr>
 
-            {{#each displayJobs as |job|}}
+            {{#each displayPosts as |post|}}
               <div class="item row">
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">
-                    <a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">{{job.title}}</a>
+                    {{#link-to 'post' post.id}}
+                      {{post.title}}
+                    {{/link-to}}
                   </h3>
                   <p>
-                    <em>{{job.company}}</em>
+                    <em>{{post.company}}</em>
                   </p>
-                  <p>{{job.description}}</p>
+                  <p class="job-list-cutoff">{{post.description}}</p>
                   <div class="job-spec-icons">
-                    {{#if job.createdDate}}
-                      <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date job.createdDate}}</span>
-                    {{/if}}
-                    
-                    {{#if job.hasLocation}}
-                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{job.city}}, {{job.state}}</span>
+                    {{#if post.createdDate}}
+                      <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date post.createdDate}}</span>
                     {{/if}}
 
-                    {{#if job.companySize}}
-                      <span class="job-spec-icon"><i class="fa fa-users"></i>{{job.companySize}} employees</span>
+                    {{#if post.hasLocation}}
+                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{post.city}}, {{post.state}}</span>
+                    {{/if}}
+
+                    {{#if post.companySize}}
+                      <span class="job-spec-icon"><i class="fa fa-users"></i> {{post.companySize}} employees</span>
                     {{/if}}
                   </div>
                 </div>
                 <!--//desc-->
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                  <a class="btn btn-cta-secondary pull-right" href="#">Apply Now <i class="fa fa-pencil-square-o"></i></a>
+                  <a class="btn btn-cta-secondary pull-right" href="">Apply Now <i class="fa fa-pencil-square-o"></i></a>
                 </div>
               </div>
               <!--//item-->
