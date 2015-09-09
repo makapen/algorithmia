@@ -31,15 +31,15 @@
                   <p class="job-list-cutoff">{{post.description}}</p>
                   <div class="job-spec-icons">
                     {{#if post.createdDate}}
-                      <span class="job-spec-icon"><i class="fa fa-clock-o"></i>{{time-from-date post.createdDate}}</span>
+                      <span class="job-spec-icon"><i class="fa fa-clock-o m-sm-r"></i>{{time-from-date post.createdDate}}</span>
                     {{/if}}
 
                     {{#if post.hasLocation}}
-                      <span class="job-spec-icon"><i class="fa fa-map-marker"></i> {{post.city}}, {{post.state}}</span>
+                      <span class="job-spec-icon"><i class="fa fa-map-marker m-sm-r"></i> {{post.city}}, {{post.state}}</span>
                     {{/if}}
 
                     {{#if post.companySize}}
-                      <span class="job-spec-icon"><i class="fa fa-users"></i> {{post.companySize}} employees</span>
+                      <span class="job-spec-icon"><i class="fa fa-users m-sm-r"></i> {{post.companySize}} employees</span>
                     {{/if}}
                   </div>
                 </div>
