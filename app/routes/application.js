@@ -24,6 +24,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
             comment: newsFeedObject.comment,
             title: newsFeedObject.content.title,
             userDescription: newsFeedObject.content.description,
+            userPicture: this.get('session.content.secure.profile.picture'),
             thumbnailUrl: newsFeedObject.content.thumbnailUrl,
             timestamp: newsFeedObject.timestamp,
           }

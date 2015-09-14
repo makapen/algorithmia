@@ -144,6 +144,17 @@ iframe {
 .news-feed-content {
   width: 100%;
 }
+.news-feed-profile {
+  border-radius: 50%;
+}
+.news-feed-profile-placeholder {
+  text-align: center;
+  font-size: 50px;
+  background-color: #f8f8f8;
+  color: #DCD8D8;
+  padding: 20px 25px;
+  border-radius: 50%;
+}
 /* ======= Navbar ======= */
 .navbar-brand {
   h1 {
