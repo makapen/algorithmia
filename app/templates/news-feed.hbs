@@ -15,13 +15,16 @@
         <div class="section-inner">
           <h2 class="heading">Status Update</h2>
           <div class="content">
-            <form class='input-group input-group-lg news-feed-content' {{action 'submitNewsFeed' on='submit'}}>
-              {{textarea value=query type="text" cols="80" name="q" class="form-control search-input orange-border" placeholder="What's on your mind?"}}
-              <br>
-              {{input value=query type="text" name="q" class="form-control search-input orange-border" placeholder="Title"}}
-              <button class="btn btn-md btn-search pull-right" type="submit">
-                <span class="glyphicon glyphicon-pencil"></span> Post
-              </button>
+            <form class='news-feed-content' {{action 'submitNewsFeed' on='submit'}}>
+              <div class="input-group input-group-lg news-feed-form">
+                <label class="sr-only">Status Title</label>
+                {{input value=news-feed-title type="text" name="q" class="form-control news-feed-input " placeholder="Status Title"}}
+              </div>
+              <div class="input-group input-group-lg news-feed-form">
+                <label class="sr-only">Status Update Content</label>
+                {{textarea value=news-feed-comment type="text" cols="80" name="q" class="form-control news-feed-input " placeholder="What's on your mind?"}}
+              </div>
+              <button class="btn btn-md btn-search" type="submit">Share</button>
             </form>
           </div>
         </div>
@@ -51,7 +54,7 @@
                   </div>
                 </div>
                 <!--//desc-->
-                <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="col-md-3 col-sm-3 col-xs-12 text-center">
                   <img src="{{news-feed.thumbnailUrl}}">
                 </div>
               </div>

@@ -141,8 +141,12 @@ iframe {
 }
 
 /* ======= News Feed ====== */
-.news-feed-content {
-  width: 100%;
+.news-feed-input {
+  margin-bottom: 20px !important;
+  border-radius: 6px !important;
+}
+.news-feed-form {
+  width: 55% !important;
 }
 .news-feed-profile {
   border-radius: 50%;
