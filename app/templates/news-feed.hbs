@@ -2,22 +2,38 @@
 
   <div class="row">
     <div class="primary col-md-8 col-sm-12 col-xs-12">
-      <form class='input-group input-group-lg job-search-bar' {{action 'submitSearch' on='submit'}}>
-        {{input value=query type="text" name="q" class="form-control search-input orange-border" placeholder="Search company, job title or location"}}
+      <!-- <form class='input-group input-group-lg job-search-bar orange-input' {{action 'submitSearch' on='submit'}}>
+        {{input value=query type="text" name="q" class="form-control search-input" placeholder="Search company, job title or location"}}
         <span class="input-group-btn">
         <button class="btn btn-md btn-search" type="submit">
           <span class="glyphicon glyphicon-search"></span> Search
         </button>
         </span>
-      </form>
+      </form> -->
+
+      <section class="post-news-feed section">
+        <div class="section-inner">
+          <h2 class="heading">Status Update</h2>
+          <div class="content">
+            <form class='input-group input-group-lg news-feed-content' {{action 'submitNewsFeed' on='submit'}}>
+              {{textarea value=query type="text" cols="80" name="q" class="form-control search-input orange-border" placeholder="What's on your mind?"}}
+              <br>
+              {{input value=query type="text" name="q" class="form-control search-input orange-border" placeholder="Title"}}
+              <button class="btn btn-md btn-search pull-right" type="submit">
+                <span class="glyphicon glyphicon-pencil"></span> Post
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
 
       <section class="latest section">
         <div class="section-inner">
-          <h2 class="heading">Recent Jobs</h2>
+          <h2 class="heading">News Feed</h2>
           <div class="content">
             <hr>
 
-            {{#each model as |post|}}
+            {{#each displayPosts as |post|}}
               <div class="item row">
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">
@@ -52,7 +68,7 @@
               <hr>
             {{else}}
               <h3 class='title'>
-                No recent job posts!
+                No recent feed posts!
               </h3>
             {{/each}}
 
