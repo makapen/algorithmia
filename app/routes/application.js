@@ -14,7 +14,28 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       // This will launch lock.js in popup mode
       var lockOptions = {authParams:{scope: 'openid'}};
 
-      this.get('session').authenticate('simple-auth-authenticator:lock', lockOptions);
+      return this.get('session').authenticate('simple-auth-authenticator:lock', lockOptions).then( () => {
+        try {
+          let newsFeedObject = this.get('session.content.secure.profile.currentShare');
+          let newsFeedProps = {
+            id: newsFeedObject.id,
+            firstName: newsFeedObject.author.firstName,
+            lastName: newsFeedObject.author.lastName,
+            comment: newsFeedObject.comment,
+            title: newsFeedObject.content.title,
+            userDescription: newsFeedObject.content.description,
+            thumbnailUrl: newsFeedObject.content.thumbnailUrl,
+            timestamp: newsFeedObject.timestamp,
+          }
+
+          return this.store.createRecord('news-feed', newsFeedProps).save();
+        }
+
+        catch(e) {
+          Ember.Logger.log('e', e);
+          return;
+        }
+      })
     }
   },
   error: function(err, transition) {
