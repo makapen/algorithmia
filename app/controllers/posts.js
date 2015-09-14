@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
       let query = this.get('query') || null;
 
       this.set('search', query);
+      this.set('isWaiting', true);
       this.send('reloadPosts');
     }
   }
