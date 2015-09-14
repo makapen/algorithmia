@@ -33,35 +33,26 @@
           <div class="content">
             <hr>
 
-            {{#each displayPosts as |post|}}
+            {{#each news-feeds as |news-feed|}}
               <div class="item row">
-                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                  <h3 class="title">
-                    {{#link-to 'post' post.id}}
-                      {{post.title}}
-                    {{/link-to}}
-                  </h3>
-                  <p>
-                    <em>{{post.company}}</em>
-                  </p>
-                  <p class="job-list-cutoff">{{post.description}}</p>
-                  <div class="job-spec-icons">
-                    {{#if post.createdDate}}
-                      <span class="job-spec-icon"><i class="fa fa-clock-o m-sm-r"></i>{{time-from-date post.createdDate}}</span>
+                <div class="desc col-md-9 col-sm-9 col-xs-12">
+                  <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                    {{#if news-feed.userPicture}}
+                      <img src="{{news-feed.userPicture}}" class="news-feed-profile">
+                    {{else}}
+                      <i class="fa fa-user news-feed-profile-placeholder"></i>
                     {{/if}}
-
-                    {{#if post.hasLocation}}
-                      <span class="job-spec-icon"><i class="fa fa-map-marker m-sm-r"></i> {{post.city}}, {{post.state}}</span>
-                    {{/if}}
-
-                    {{#if post.companySize}}
-                      <span class="job-spec-icon"><i class="fa fa-users m-sm-r"></i> {{post.companySize}} employees</span>
-                    {{/if}}
+                  </div>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <h3 class="title">
+                      {{news-feed.firstName}} {{news-feed.lastName}}
+                    </h3>
+                    <p>{{news-feed.comment}}</p>
                   </div>
                 </div>
                 <!--//desc-->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                  <a class="btn btn-cta-secondary pull-right" href="">Apply Now <i class="fa fa-pencil-square-o"></i></a>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <img src="{{news-feed.thumbnailUrl}}">
                 </div>
               </div>
               <!--//item-->
