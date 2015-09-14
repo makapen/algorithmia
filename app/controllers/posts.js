@@ -1,23 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  queryParams: ['search'],
+  search: null,
+
   currentJob: function() {
     return this.get('session.secure.profile.positions.values.firstObject');
   }.property('session.secure.profile.positions.values.[]'),
 
-  displayPosts: Ember.computed('posts.[]', function() {
-    return this.get('posts');
-  }),
-
   actions: {
     submitSearch: function() {
-      this.store.query('post', {
-        "title": this.get('query')
-      }).then( (posts) => {
-        this.set('posts', posts);
-      }).catch( (err) => {
-        throw new Error(err);
-      })
+      // get the query and set it as a query param, send an action to refresh the model hooks
+      let query = this.get('query') || null;
+
+      this.set('search', query);
+      this.send('reloadPosts');
     }
   }
 });
