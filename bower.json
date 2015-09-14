@@ -15,7 +15,8 @@
     "firebase": "^2.1.0",
     "ember-simple-auth": "0.8.0",
     "auth0-lock": "~7.7.1",
-    "jsrsasign": "~4.8.3"
+    "jsrsasign": "~4.8.3",
+    "spin.js": "~2.3.2"
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",

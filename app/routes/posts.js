@@ -24,7 +24,10 @@ export default Ember.Route.extend({
 
   actions: {
     reloadPosts() {
-      this.refresh();
+      this.refresh().then( () => {
+        this.controllerFor('posts').set('isWaiting', false);
+      })
+
     }
   }
 });
