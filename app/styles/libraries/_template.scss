@@ -140,6 +140,10 @@ iframe {
   margin-right: 5px;
 }
 
+/* ======= News Feed ====== */
+.news-feed-content {
+  width: 100%;
+}
 /* ======= Navbar ======= */
 .navbar-brand {
   h1 {
@@ -273,7 +277,7 @@ iframe {
 .latest .item {
   margin: 15px 0;
   margin-right: 5px;
-  
+
   .job-spec-icons {
     color: #d35400;
     font-size: 13px;

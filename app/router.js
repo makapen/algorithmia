@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('post-content');
   this.route('post', { path: 'post/:id'});
   this.route('posts');
+  this.route('news-feed');
 });
 
 export default Router;
