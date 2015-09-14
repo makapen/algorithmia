@@ -7,5 +7,9 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   userDescription: DS.attr('string'),
   thumbnailUrl: DS.attr('string'),
-  timestamp: DS.attr('string')
+  timestamp: DS.attr('string'),
+
+  formattedTimestamp: Ember.computed('timestamp', function() {
+    return moment(this.get('timestamp'), 'x').format('MM-DD-YYYY');
+  }),
 });
