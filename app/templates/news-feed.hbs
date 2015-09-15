@@ -2,7 +2,6 @@
 
   <div class="row">
     <div class="primary col-md-8 col-sm-12 col-xs-12">
-
       <section class="post-news-feed section">
         <div class="section-inner">
           <h2 class="heading news-feed-status-heading" {{action 'createNewsFeed' on='click'}}>Status Update <i class="p-sm-l fa fa-chevron-down orange-icon"></i></h2>
@@ -10,11 +9,11 @@
             <form {{action 'submitNewsFeed' on='submit'}}>
               <div class="input-group input-group-lg news-feed-form">
                 <label class="sr-only">Status Title</label>
-                {{input value=news-feed-title type="text" name="q" class="form-control news-feed-input " placeholder="Status Title"}}
+                {{input value=title type="text" class="form-control news-feed-input " placeholder="Status Title"}}
               </div>
               <div class="input-group input-group-lg news-feed-form">
                 <label class="sr-only">Status Update Content</label>
-                {{textarea value=news-feed-comment type="text" cols="80" name="q" class="form-control news-feed-input " placeholder="What's on your mind?"}}
+                {{textarea value=comment type="text" cols="80" class="form-control news-feed-input " placeholder="What's on your mind?"}}
               </div>
               <button class="btn btn-md btn-search" type="submit">Share</button>
             </form>
