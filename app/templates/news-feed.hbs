@@ -4,9 +4,9 @@
     <div class="primary col-md-8 col-sm-12 col-xs-12">
       <section class="post-news-feed section">
         <div class="section-inner">
-          <h2 class="heading">Status Update</h2>
-          <div class="content">
-            <form class='news-feed-content' {{action 'submitNewsFeed' on='submit'}}>
+          <h2 class="heading news-feed-status-heading" {{action 'createNewsFeed' on='click'}}>Status Update <i class="p-sm-l fa fa-chevron-down orange-icon"></i></h2>
+          <div class='news-feed-content {{if showCreateNewsFeed 'show' 'hidden'}}'>
+            <form {{action 'submitNewsFeed' on='submit'}}>
               <div class="input-group input-group-lg news-feed-form">
                 <label class="sr-only">Status Title</label>
                 {{input value=title type="text" class="form-control news-feed-input " placeholder="Status Title"}}
@@ -41,8 +41,13 @@
                     <h3 class="title">
                       {{news-feed.firstName}} {{news-feed.lastName}}
                     </h3>
+                    <p><em>{{news-feed.title}}</em></p>
                     <p>{{news-feed.comment}}</p>
-                    <p class='accent-color'><em>{{time-from-date news-feed.formattedTimestamp}}</em></p>
+                    <div class="job-spec-icons">
+                      {{#if news-feed.formattedTimestamp}}
+                        <span class="job-spec-icon"><i class="fa fa-calendar m-sm-r"></i>{{time-from-date news-feed.formattedTimestamp}}</span>
+                      {{/if}}
+                    </div>
                   </div>
                 </div>
                 <!--//desc-->
