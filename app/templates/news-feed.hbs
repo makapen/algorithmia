@@ -2,20 +2,12 @@
 
   <div class="row">
     <div class="primary col-md-8 col-sm-12 col-xs-12">
-      <!-- <form class='input-group input-group-lg job-search-bar orange-input' {{action 'submitSearch' on='submit'}}>
-        {{input value=query type="text" name="q" class="form-control search-input" placeholder="Search company, job title or location"}}
-        <span class="input-group-btn">
-        <button class="btn btn-md btn-search" type="submit">
-          <span class="glyphicon glyphicon-search"></span> Search
-        </button>
-        </span>
-      </form> -->
 
       <section class="post-news-feed section">
         <div class="section-inner">
-          <h2 class="heading">Status Update</h2>
-          <div class="content">
-            <form class='news-feed-content' {{action 'submitNewsFeed' on='submit'}}>
+          <h2 class="heading news-feed-status-heading" {{action 'createNewsFeed' on='click'}}>Status Update <i class="p-sm-l fa fa-chevron-down orange-icon"></i></h2>
+          <div class='news-feed-content {{if showCreateNewsFeed 'show' 'hidden'}}'>
+            <form {{action 'submitNewsFeed' on='submit'}}>
               <div class="input-group input-group-lg news-feed-form">
                 <label class="sr-only">Status Title</label>
                 {{input value=news-feed-title type="text" name="q" class="form-control news-feed-input " placeholder="Status Title"}}
