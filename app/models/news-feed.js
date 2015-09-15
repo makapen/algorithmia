@@ -15,6 +15,6 @@ export default DS.Model.extend({
   }),
 
   formattedTimestamp: Ember.computed('timestamp', function() {
-    return moment(this.get('timestamp'), 'x').format('MM-DD-YYYY');
+    return moment(this.get('timestamp'), 'x').format('MM-DD-YYYY, h:mm:ss a');
   }),
 });
