@@ -41,7 +41,13 @@
                     <h3 class="title">
                       {{news-feed.firstName}} {{news-feed.lastName}}
                     </h3>
+                    <p><em>{{news-feed.title}}</em></p>
                     <p>{{news-feed.comment}}</p>
+                    <div class="job-spec-icons">
+                      {{#if news-feed.formattedTimestamp}}
+                        <span class="job-spec-icon"><i class="fa fa-calendar m-sm-r"></i> {{news-feed.formattedTimestamp}}</span>
+                      {{/if}}
+                    </div>
                   </div>
                 </div>
                 <!--//desc-->

@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
         title: this.get('title'),
         comment: this.get('comment'),
         timestamp: Date.now(),
+        userPicture: this.get('session.content.secure.profile.picture'),
       }).save();
     }
   }
