@@ -3,7 +3,6 @@
     {{ember-spinner lines=11 length=16 radius=30 width=8 rotate=10 speed='1.1' color="#e67e22"}}
   </div>
 {{else}}
-{{model.sentiment}}
   <div class="item row">
     <div class="desc col-md-9 col-sm-9 col-xs-12">
       <div class="col-md-3 col-sm-3 col-xs-3 text-center">
@@ -20,6 +19,8 @@
         <p><em>{{model.title}}</em></p>
         <p>{{model.comment}}</p>
         <div class="job-spec-icons">
+          {{display-sentiment value=model.sentiment}}
+
           {{#if model.formattedTimestamp}}
             <span class="job-spec-icon"><i class="fa fa-calendar m-sm-r"></i>{{time-from-date model.formattedTimestamp}}</span>
           {{/if}}
