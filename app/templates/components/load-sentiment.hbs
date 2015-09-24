@@ -2,6 +2,27 @@
   <div class='sentiment-ember-spinner'>
     {{ember-spinner lines=11 length=16 radius=30 width=8 rotate=10 speed='1.1' color="#e67e22"}}
   </div>
+{{else if redditModel}}
+  <div class="item row">
+    <div class="desc col-md-9 col-sm-9 col-xs-12">
+      <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+          <i class="fa fa-user news-feed-profile-placeholder"></i>
+      </div>
+      <div class="col-md-9 col-sm-9 col-xs-9">
+        <p><em>{{model.title}}</em></p>
+
+        {{{model.description}}}
+
+        <div class="job-spec-icons">
+          {{display-sentiment value=model.sentimentScore}}
+        </div>
+      </div>
+    </div>
+    <!--//desc-->
+    <!-- <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+      <img src="{{news-feed.thumbnailUrl}}">
+    </div> -->
+  </div>
 {{else}}
   <div class="item row">
     <div class="desc col-md-9 col-sm-9 col-xs-12">

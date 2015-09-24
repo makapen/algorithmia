@@ -1,10 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  newsFeeds: Ember.computed('model.[]', function() {
-    return this.get('model').toArray().sort((a, b) => {
-      return moment(a.get('formattedTimestamp')).isBefore(moment(b.get('formattedTimestamp')));
-    })
+  newsFeeds: Ember.computed('model.[]', 'reddit.[]', function() {
+    const reddit = this.get('reddit');
+
+    if (reddit) {
+      let sortedModel = this.get('model').toArray().sort((a, b) => {
+        return moment(a.get('formattedTimestamp')).isBefore(moment(b.get('formattedTimestamp')));
+      })
+      console.log('sor', sortedModel)
+      return sortedModel.concat(reddit);
+    }
+    else {
+      return this.get('model').toArray().sort((a, b) => {
+        return moment(a.get('formattedTimestamp')).isBefore(moment(b.get('formattedTimestamp')));
+      })
+    }
   }),
   showCreateNewsFeed: false,
 
