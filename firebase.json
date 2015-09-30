@@ -1,5 +1,5 @@
 {
-  "firebase": "makapen-social-network",
+  "firebase": "makapen-algorithmia",
   "public": "dist",
   "ignore": [
     "firebase.json",
