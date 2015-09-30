@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   },
   afterModel() {
     return ajax({
-      url: 'http://localhost:3000/reddit',
+      url: 'https://localhost:3000/reddit',
       method: 'GET',
     }).then( (parsedReddit) => {
       this.set('parsedReddit', parsedReddit);

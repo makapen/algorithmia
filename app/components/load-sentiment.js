@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 
       if (comment && !model.get('sentiment')) {
         ajax({
-          url: 'http://localhost:3000/sentiment',
+          url: 'https://localhost:3000/sentiment',
           method: 'POST',
           data: comment
         }).then ( (sentimentValue) => {
