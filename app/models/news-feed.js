@@ -9,6 +9,7 @@ export default DS.Model.extend({
   userPicture: DS.attr('string'),
   thumbnailUrl: DS.attr('string'),
   timestamp: DS.attr('string'),
+  sentiment: DS.attr('string'),
 
   author: Ember.computed('firstName', 'lastName', function() {
     return this.get('firstName') + ' ' + this.get('lastName');

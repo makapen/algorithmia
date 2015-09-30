@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   newsFeeds: Ember.computed('model.[]', function() {
     return this.get('model').toArray().sort((a, b) => {
       return moment(a.get('formattedTimestamp')).isBefore(moment(b.get('formattedTimestamp')));
