@@ -1,5 +1,8 @@
 /* jshint node: true */
+var deployTarget = process.env.deployTarget || 'local';
+var deployTargetConfig = require('./' + deployTarget + '.json');
 
+console.log(deployTargetConfig);
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'social-network',
@@ -18,6 +21,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      apiServer: deployTargetConfig.apiServer
     }
   };
 

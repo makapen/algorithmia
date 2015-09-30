@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import ajax from 'ic-ajax';
+import config from '../config/environment';
 
 export default Ember.Component.extend({
   model: null,
@@ -13,7 +14,7 @@ export default Ember.Component.extend({
 
       if (comment && !model.get('sentiment')) {
         ajax({
-          url: 'https://localhost:3000/sentiment',
+          url: config.APP.apiServer + '/sentiment',
           method: 'POST',
           data: comment
         }).then ( (sentimentValue) => {
